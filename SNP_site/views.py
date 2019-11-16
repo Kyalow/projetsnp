@@ -25,7 +25,7 @@ def list_phenotype_redirection(request):
 
     # data_disease = Database.objects.values_list('disease', flat = True).distinct()
     # data = Database.objects.filter(disease__in = data_disease).distinct()
-    data = Database.objects.values('disease', 'journal', 'date', 'first_author', 'study' ,'initial_sample_size').distinct().order_by()
+    data = Database.objects.values('disease', 'journal', 'date', 'first_author', 'study' ,'initial_sample_size').distinct().order_by() # regroupe les mêmes informations à propos des phénotypes contenant les mêmes informations
     # data_disease = Database.objects.all().distinct()
 
 
@@ -40,14 +40,14 @@ def snp_search_entry(request):
     if request.method == "GET":
         query = request.GET.get('snps_id_name')
         if query:
-            object_list = Database.objects.filter(snps__regex = query)
+            object_list = Database.objects.filter(snps__regex = query) # get all snp with regular expression in the database
             context= RequestContext(request)
                 # data = json.dumps(object_list)
             return render_to_response('SNP_search_result_page.html', {"result" : object_list,}, context)
 
 
         else:
-            # when the user didn't match the database -> show a new page and put a new resaerch of SNP
+            # when the user didn't match the database -> show a new page and put a new search of SNP
             query = request.GET.get('snps_id_name_again')
             if query:
                 new_match_query = Database.objects.filter(snps__regex = query)
@@ -72,17 +72,18 @@ def phenotype_list_database(request):
     """
 
     data = Database.objects.values_list(disease)
-    print(data)
+    # print(data)
     context = RequestContext(request)
     return render_to_response('list_pheonotype_home_page.html', {"result" : data}, context)
 
 def phenotype_detail(request):
     """
-        redirect from disease to detail desease page (phenotype + reference )
+        redirect from disease to disease detail page (phenotype + references)
     """
 
 
     querystring = request.GET.urlencode()
+    # Manually modify the get urlencode character to make the correct query in the database
     querystring = querystring.replace("+", ' ')
     querystring = querystring.replace("=", "")
     querystring = querystring.replace("%28", "(")

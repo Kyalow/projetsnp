@@ -24,51 +24,67 @@
     body {
       background-color: rgba(150, 150, 0, 0.2);
     }
-    .container {
-      position: sticky;
-      left: 20px;
-      bottom: 1px;
+    .container2 {
+      position:  fixed;
+      left: 70%;
+      top: 10%;
       width: 108px;
       height: 50px;
       border: 3px solid grey;
 
     }
-    .container img {
+    .container2 img {
       width: 35px;
       height: auto;
 
     }
 
+    body {
+      background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: auto;
+      -o-background-size: cover;
+
+    }
     </style>
   </head>
   <body>
+    <div class="container">
+      <div class="card border-0 shadow my-5">
+        <div class="card-body p-5">
+          {% if result %}
+          <h1> SNP information </h1>
+          {% for r in result %}
+          <br> <b>PUBMED ID :</b> {{r.pumedid}}
+          <br>
+          <br> <b>SNP ID :</b>   {{r.snps}}
+          <br> <b>SNP current id :</b>  {{r.snp_id_current}}
+          <br>
+          <br> <b>Published :</b>  {{r.date}}
+          <br> <b>First author :</b>  {{r.first_author}}
+          <br> <b>Journal :</b> {{r.journal}}
+          <br> <b> Link :</b>  <a href= "https://{{r.link}}">https://{{r.link}}</a>
+          <br> <b>Study :</b>  {{r.study}}
+          <br> <b>Disease :</b>  {{r.disease}}
+          <br> <b>Initial sample size :</b>  {{r.initial_sample_size}}
+          <br>
+          <br> <b>Region :</b>  {{r.region}}
+          <br> <b>Chromosome ID :</b>   {{r.chr_id}}
+          <br> <b>Chromosome Position :</b>  {{r.chr_pos}}
+          <br>
+          <br> <b>Strongest SNP-Risk allele :</b>  {{r.strongest_snp_id_risks}}
+          <br> <b>Context :</b>  {{r.context}}
+          <br> <b>Risk frequency :</b>     {{r.risk_allele_frequency}}
+          <br>
+          <br> <b>P-value :</b>  {{r.p_value}}
+          <br> <b>Log P-Value :</b>  {{r.p_valueLog}}
+          <br>
+          {% endfor %}
 
-    <h1> Detail of your result research </h1>
-{% if result %}
-  {% for r in result %}
-
-  <br> <b>SNPS ID :</b>   {{r.snps}}
-  <br> <b>SNPS current id :</b>  {{r.snp_id_current}}
-  <br>
-  <br> <b>Published :</b>  {{r.date}}
-  <br> <b>Author :</b>  {{r.first_author}}
-  <br> <b> Link :</b>  <a href= "https://{{r.link}}">https://{{r.link}}</a>
-  <br> <b>Study :</b>  {{r.study}}
-  <br> <b>Disease :</b>  {{r.disease}}
-  <br> <b>Initial sample size :</b>  {{r.initial_sample_size}}
-  <br>
-  <br> <b>Region :</b>  {{r.region}}
-  <br> <b>Chromosome ID :</b>   {{r.chr_id}}
-  <br> <b>Chromosome Position :</b>  {{r.chr_pos}}
-  <br>
-  <br> <b>Strongest SNP-Risk allele :</b>  {{r.strongest_snp_id_risks}}
-  <br> <b>Context :</b>  {{r.context}}
-  <br> <b>Risk frequency :</b>     {{r.risk_allele_frequency}}
-  <br>
-  <br> <b>P-value :</b>  {{r.p_value}}
-  <br> <b>Log P-Value :</b>  {{r.p_valueLog}}
-  <br>
-  {% endfor %}
+        </div>
+      </div>
+    </div>
 {% else %}
 
 
@@ -77,8 +93,8 @@
 
 
     <!-- retrouve le résultat et affiche le resultat dans un coin du site avec un button en mode afficher plus de détail avec une redirection de lien avec plus de détail -->
-    <div class="container">
-      <b>Help</b><img class = img_1 src="{% static "img/Emoji_u2753.svg.png"%}" data-toggle="tooltip" title="if you have a value like -9999 or -1 or Empty_Data mean the data is not present in database"/>
+    <div class="text-center container2">
+        <b>Help</b><img class = img_1 src="{% static "img/Emoji_u2753.svg.png"%}" data-toggle="tooltip" title="if you have a value like -9999 or -1 or Empty_Data then the data is not present in database"/>
     </div>
 
     <!-- <aside class="bottom_information">

@@ -7,19 +7,24 @@
     <title>Search your SNP</title>
 
     <style>
-      h1 {
-        position:relative;
-        left: 35%;
-      }
+
       form {
-        position: fixed;
-        top: 45%;
-        bottom: 45%;
-        left: 35%;
+        margin: 15 auto;
+
 
       }
       body {
-        background-color: rgba(150, 150, 0, 0.2);
+        background: url('https://source.unsplash.com/twukN12EN7c/1920x1080') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: auto;
+        -o-background-size: cover;
+
+      }
+      .container {
+        margin: 0 auto;
+
+
       }
     </style>
   </head>
@@ -40,13 +45,19 @@
         });
       });
     </script> -->
-    <h1 class="display-2">SNP Database</h1>
+    <h1 class="display-2" align="center">SNP Database</h1>
 
-    <form action = "/SNP_search_result_page/" method="GET" class="form-group">
-      Research your SNP id in the database :
-      <input type="text" id="snps_id_name" name="snps_id_name" required>
-      <button type="submit" name="search" value="Search in database" class="btn btn-success">Rechercher</button>
-    </form>
+    <div class="text-center container">
+      <div class="card border-0 shadow my-5" style="bottom: 0px">
+        <div class="card-body p-5">
+          <form action = "/SNP_search_result_page/" method="GET" >
+            <b>Search your SNP id in the database : </b>
+            <input type="text" id="snps_id_name" name="snps_id_name" required>
+            <button type="submit" name="search" value="Search in database" class="btn btn-success">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- retrouve le résultat et affiche le resultat dans un coin du site avec un button en mode afficher plus de détail avec une redirection de lien avec plus de détail -->
   </body>
 </html>
