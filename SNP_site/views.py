@@ -11,7 +11,12 @@ def home_direct(request):
         Get the Home page of the application
     """
     return render_to_response("base.html")
+def direct(request):
+    """
+        Get the home page application without url name
+    """
 
+    return render_to_response("home.html")
 def snp_search_redirect(request):
     """
         Redirection on snp search home page

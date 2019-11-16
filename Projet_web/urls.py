@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
-from SNP_site.views import home_direct, snp_search_redirect, list_phenotype_redirection, snp_search_entry, snp_detail_entry_search, phenotype_detail
+from SNP_site.views import home_direct, snp_search_redirect, list_phenotype_redirection, snp_search_entry, snp_detail_entry_search, phenotype_detail, direct
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^home_page/$', home_direct),
@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^list_pheonotype_home_page/$', list_phenotype_redirection, name = "list_pheonotype"),
     url(r'^SNP_search_result_page/$', snp_search_entry, name = "SNP_search_result_page"),
     url(r'^SNP_search_detail_page/$', snp_detail_entry_search, name = "SNP_detail"),
-    url(r'^phenotype_detail_page/$', phenotype_detail, name = 'phenotype_detail')
+    url(r'^phenotype_detail_page/$', phenotype_detail, name = 'phenotype_detail'),
+    url(r'^$', direct)
 ]
