@@ -24,7 +24,8 @@ Prend quelque temps pour pouvoir importer la base de donnée dans sqlite.db
 
 ## Lancer le serveur local de l'application web 
 
-Dans votre terminal :
+#### Dans votre terminal :
+		
 		python manage.py runserver
 
 Récupérer l'adresse présente dans le terminal (127.0.0.1:8000/), mettre ensuite sur votre navigateur internet l'adresse suivante avec home_page ou sans rien (donne accès à la page d'accueille)
