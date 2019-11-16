@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Search your SNP</title>
+
+    <style>
+      h1 {
+        position:relative;
+        left: 35%;
+      }
+      form {
+        position: fixed;
+        top: 45%;
+        bottom: 45%;
+        left: 35%;
+
+      }
+      body {
+        background-color: rgba(150, 150, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <script>
+      $(function() {
+        var availableTitle = [
+        "rs"
+      ];
+        $("#snps_id_name").autocomplete({
+          source: availableTitle
+
+        });
+      });
+    </script> -->
+    <h1 class="display-2">SNP Database</h1>
+
+    <form action = "/SNP_search_result_page/" method="GET" class="form-group">
+      Research your SNP id in the database :
+      <input type="text" id="snps_id_name" name="snps_id_name" required>
+      <button type="submit" name="search" value="Search in database" class="btn btn-success">Rechercher</button>
+    </form>
+    <!-- retrouve le résultat et affiche le resultat dans un coin du site avec un button en mode afficher plus de détail avec une redirection de lien avec plus de détail -->
+  </body>
+</html>

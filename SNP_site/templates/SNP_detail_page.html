@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <!-- <title>Search your SNP</title> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'js/button_help_documentation.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Detail of your result</title>
+    <style>
+    .bottom_information {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: green;
+      color: black;
+      text-align: center;
+    }
+    body {
+      background-color: rgba(150, 150, 0, 0.2);
+    }
+    .container {
+      position: sticky;
+      left: 20px;
+      bottom: 1px;
+      width: 108px;
+      height: 50px;
+      border: 3px solid grey;
+
+    }
+    .container img {
+      width: 35px;
+      height: auto;
+
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <h1> Detail of your result research </h1>
+{% if result %}
+  {% for r in result %}
+
+  <br> <b>SNPS ID :</b>   {{r.snps}}
+  <br> <b>SNPS current id :</b>  {{r.snp_id_current}}
+  <br>
+  <br> <b>Published :</b>  {{r.date}}
+  <br> <b>Author :</b>  {{r.first_author}}
+  <br> <b> Link :</b>  <a href= "https://{{r.link}}">https://{{r.link}}</a>
+  <br> <b>Study :</b>  {{r.study}}
+  <br> <b>Disease :</b>  {{r.disease}}
+  <br> <b>Initial sample size :</b>  {{r.initial_sample_size}}
+  <br>
+  <br> <b>Region :</b>  {{r.region}}
+  <br> <b>Chromosome ID :</b>   {{r.chr_id}}
+  <br> <b>Chromosome Position :</b>  {{r.chr_pos}}
+  <br>
+  <br> <b>Strongest SNP-Risk allele :</b>  {{r.strongest_snp_id_risks}}
+  <br> <b>Context :</b>  {{r.context}}
+  <br> <b>Risk frequency :</b>     {{r.risk_allele_frequency}}
+  <br>
+  <br> <b>P-value :</b>  {{r.p_value}}
+  <br> <b>Log P-Value :</b>  {{r.p_valueLog}}
+  <br>
+  {% endfor %}
+{% else %}
+
+
+{% endif %}
+
+
+
+    <!-- retrouve le résultat et affiche le resultat dans un coin du site avec un button en mode afficher plus de détail avec une redirection de lien avec plus de détail -->
+    <div class="container">
+      <b>Help</b><img class = img_1 src="{% static "img/Emoji_u2753.svg.png"%}" data-toggle="tooltip" title="if you have a value like -9999 or -1 or Empty_Data mean the data is not present in database"/>
+    </div>
+
+    <!-- <aside class="bottom_information">
+
+      <p>if you have a value like -9999 or -1 or Empty_Data mean the data is not present in database</p>
+    </aside> -->
+  </body>
+
+</html>
