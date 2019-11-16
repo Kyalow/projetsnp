@@ -11,14 +11,13 @@
 # Importation de la base de données dans l'application web :
 
 	Tout d'abord exécuté la commande suivante :
-		
-python manage.py shell 
+		python manage.py shell 
 ***
 
 sur le shell de l'application web vous devez utilisé la commande suivante :
 
 ***
-exec(open('import_data.py').read())
+		exec(open('import_data.py').read())
 Prend quelque temps pour pouvoir importer la base de donnée dans sqlite.db
 
 
