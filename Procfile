@@ -1,1 +1,1 @@
-web: gunicorn SNP_site.wsgi --log-file -
+web: gunicorn projetsnp.wsgi --log-file -
