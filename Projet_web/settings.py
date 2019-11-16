@@ -34,7 +34,7 @@ DJANGO_DEBUG = False
 #     DEBUG = True
 
 ALLOWED_HOSTS = ['SNP_site.herokuapp.com',
-'0.0.0.0',
+'blooming-inlet-34163.herokuapp.com',
 '127.0.0.1']
 
 
