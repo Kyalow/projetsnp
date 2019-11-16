@@ -1,24 +1,10 @@
 from SNP_site.models import Database
 
 import csv
-import pandas as pd
+
 count = 0
 
 CSV_PATH = "gwas_catalog_v1.0-associations_e96_r2019-09-24_european_nature_genetics_1000(1).tsv"
-#
-# df = pd.read_csv(CSV_PATH, sep='\t', encoding='utf-8')
-# # print(df.dtypes)
-# df.DATE= pd.to_datetime(df.DATE)
-# df.LINK = df.LINK.to_string()
-# print(list(df.columns))
-# Database.objects.create(pumedid= df['PUBMEDID'], first_author= df['FIRST AUTHOR'], date= df['DATE'], journal = df['JOURNAL'], link= df['LINK'], study = df['STUDY'], disease= df['DISEASE/TRAIT'],
-# initial_sample_size= df['INITIAL SAMPLE SIZE'], region= df['REGION'], chr_id= df['CHR_ID'], chr_pos= df['CHR_POS'], snp_id_risks= df['STRONGEST SNP-RISK ALLELE'], snp_id = df['SNPS'], snp_id_current= df['SNP_ID_CURRENT'], context= df['CONTEXT'], risk_allele_frequency= df['RISK ALLELE FREQUENCY'],
-# p_value = df['P-VALUE'],  p_valueLog = df['PVALUE_MLOG'] )
-
-# for i in df:
-#     print(df[i].head(2))
-#     print(df[i].dtypes)
-# accumulateur_data = []
 
 # Ouvertur du fichier tsv
 with open(CSV_PATH, newline ="") as csvfile:

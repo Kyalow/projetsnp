@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
-  {% load staticfiles %}
+{% load staticfiles %}
+<html lang="en">
+
   <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,7 +14,7 @@
     <script src="{% static "http://code.jquery.com/jquery-1.9.1.js" %}"></script>
     <script src="{% static "https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.js"%}"></script>
     <script src="{% static "https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/filter.formatter.min.css"%}"></script> -->
-    <script type="text/javascript">
+    <script>
     $("#Table_phenotype").tablesorter();
     </script>
   <style>
@@ -80,14 +81,12 @@
             <tbody class = "thead-light">
               {% for d in disease %}
               <tr>
-
-                <td>  <a href="{% url 'phenotype_detail' %}?={{ d.disease|urlencode }}" name = query_detail >{{ d.disease }}</a> </td>
+                <td>  <a href="{% url 'phenotype_detail' %}?={{ d.disease|urlencode }}"  >{{ d.disease }}</a> </td>
                 <td> {{ d.first_author}} </td>
                 <td> {{ d.date }} </td>
                 <td> {{ d.journal }} </td>
                 <td> {{ d.study}} </td>
                 <td> {{ d.initial_sample_size}} </td>
-
               </tr>
               {% endfor %}
             </tbody>
