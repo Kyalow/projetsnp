@@ -55,11 +55,11 @@ Récupérer l'adresse présente dans le terminal (127.0.0.1:8000/), mettre ensui
 
 Pour accéder à l'application web voici les liens ci-dessous, choisir le serveur de préférence, le site prend un quelque seconde pour de lancer (le temps que le serveur s'active).
 
-* (serveur us) 
+		* (serveur us) 
 		https://blooming-inlet-34163.herokuapp.com/
 		https://blooming-inlet-34163.herokuapp.com/home_page
 
-* (serveur eu) 
+		* (serveur eu) 
 		https://blooming-inlet-34166.herokuapp.com/
 		https://blooming-inlet-34166.herokuapp.com/home_page
 
