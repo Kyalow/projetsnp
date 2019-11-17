@@ -7,17 +7,17 @@ Le fichier environment.yml contient l'environnement conda pour installer cet env
 
 le nom de l'environnement crée sera "**djangoenv**", si le nom est déjà utilisé ouvrir le fichier et modifier la première ligne correspondant à "**name:djangoenv**" par le nom que vous voulez.
 
-Si vous ne voulez pas passez par l'installation de l'environnement conda par environment.yml alors vous pouvez installer ces packages qui sont dépendants.
+Si vous ne voulez pas passer par l'installation de l'environnement conda par environment.yml alors vous pouvez installer ces packages qui sont dépendants.
 
 * Django 2.2.1	
 * sqlite 3.29.0
 * python 3.7.4
-* conda install -c anaconda libpq
-* conda install -c anaconda psycopg2
-* pip install django-heroku
-* conda install -c conda-forge jquery
-* conda install -c conda-forge django-jquery
-* pip install gunicorn==20.0.0
+		* conda install -c anaconda libpq
+		* conda install -c anaconda psycopg2
+		* pip install django-heroku
+		* conda install -c conda-forge jquery
+		* conda install -c conda-forge django-jquery
+		* pip install gunicorn==20.0.0
 
 Regarder le fichier requirements.txt s'il vous manque un package pour faire fonctionner l'application web. 
 
@@ -31,7 +31,7 @@ Regarder le fichier requirements.txt s'il vous manque un package pour faire fonc
 
 # Importation de la base de données dans l'application web (dans sqlite.db):
 
-	Tout d'abord exécuté la commande suivante :
+	Tout d'abord exécuter la commande suivante :
 		python manage.py shell 
 ***
 
@@ -49,7 +49,7 @@ Prend quelque temps pour pouvoir importer la base de donnée dans sqlite.db (ici
 		
 		python manage.py runserver
 
-Récupérer l'adresse présente dans le terminal (127.0.0.1:8000/), mettre ensuite sur votre navigateur internet l'adresse suivante avec home_page ou sans rien (donne accès à la page d'accueille).
+Récupérer l'adresse présente dans le terminal (127.0.0.1:8000/), mettre ensuite sur votre navigateur internet cette adresse suivante avec home_page ou sans rien (donne accès à la page d'accueil).
 
 ## Accès au serveur web déployer à l'aide de heroku 
 
@@ -57,10 +57,16 @@ Pour accéder à l'application web voici les liens ci-dessous, choisir le serveu
 
 		* (serveur us) 
 		https://blooming-inlet-34163.herokuapp.com/
+
+		or 
+
 		https://blooming-inlet-34163.herokuapp.com/home_page
 
 		* (serveur eu) 
 		https://blooming-inlet-34166.herokuapp.com/
+
+		or
+		
 		https://blooming-inlet-34166.herokuapp.com/home_page
 
 
