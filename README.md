@@ -35,9 +35,11 @@ Regarder le fichier requirements.txt s'il vous manque un package pour faire fonc
 
 # Importation de la base de données dans l'application web (dans sqlite.db):
 
-	Tout d'abord exécuter la commande suivante :
-		python manage.py shell 
+Tout d'abord exécuter la commande suivante :
 ***
+
+		python manage.py shell 
+
 
 sur le shell de l'application web vous devez utilisé la commande suivante :
 
