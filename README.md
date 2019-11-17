@@ -22,8 +22,14 @@ Si vous ne voulez pas passez par l'installation de l'environnement conda par env
 Regarder le fichier requirements.txt s'il vous manque un package pour faire fonctionner l'application web. 
 
 
+# Migration de la base donnée dans sqlite.db :
 
-# Importation de la base de données dans l'application web :
+		python manage.py makemigrations
+
+		python manage.py migrate
+
+
+# Importation de la base de données dans l'application web (dans sqlite.db):
 
 	Tout d'abord exécuté la commande suivante :
 		python manage.py shell 
@@ -33,7 +39,7 @@ sur le shell de l'application web vous devez utilisé la commande suivante :
 
 ***
 		exec(open('import_data.py').read())
-Prend quelque temps pour pouvoir importer la base de donnée dans sqlite.db
+Prend quelque temps pour pouvoir importer la base de donnée dans sqlite.db (ici la base de donnée à déjà été ajoutée)
 
 *** 
 
@@ -59,6 +65,11 @@ Pour accéder à l'application web voici les liens ci-dessous, choisir le serveu
 
 
 
-# Crédit :
+# Crédit ©:
 
 Application web crée par HAMMAMI Yousri 
+
+
+#### Lien accès au git :
+
+https://github.com/Kyalow/projetsnp
