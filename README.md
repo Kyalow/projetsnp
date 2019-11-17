@@ -5,7 +5,7 @@ Le fichier environment.yml contient l'environnement conda pour installer cet env
 
 		conda env create --file=environment.yml
 
-le nom de l'environnement crée sera "djangoenv", si le nom est déjà utilisé ouvrir le fichier et modifier la première ligne correspondant à "name:djangoenv" par le nom que vous voulez.
+le nom de l'environnement crée sera "**djangoenv**", si le nom est déjà utilisé ouvrir le fichier et modifier la première ligne correspondant à "**name:djangoenv**" par le nom que vous voulez.
 
 Si vous ne voulez pas passez par l'installation de l'environnement conda par environment.yml alors vous pouvez installer ces packages qui sont dépendants.
 
