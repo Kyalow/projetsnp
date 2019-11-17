@@ -14,6 +14,8 @@ Si vous ne voulez pas passer par l'installation de l'environnement conda par env
 * python 3.7.4
 
 Ligne à mettre dans votre terminal pour installer d'autre package :
+
+***
 		conda install -c anaconda libpq
 		conda install -c anaconda psycopg2
 		pip install django-heroku
