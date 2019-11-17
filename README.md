@@ -12,12 +12,12 @@ Si vous ne voulez pas passer par l'installation de l'environnement conda par env
 * Django 2.2.1	
 * sqlite 3.29.0
 * python 3.7.4
-		* conda install -c anaconda libpq
-		* conda install -c anaconda psycopg2
-		* pip install django-heroku
-		* conda install -c conda-forge jquery
-		* conda install -c conda-forge django-jquery
-		* pip install gunicorn==20.0.0
+		conda install -c anaconda libpq
+		conda install -c anaconda psycopg2
+		pip install django-heroku
+		conda install -c conda-forge jquery
+		conda install -c conda-forge django-jquery
+		pip install gunicorn==20.0.0
 
 Regarder le fichier requirements.txt s'il vous manque un package pour faire fonctionner l'application web. 
 
